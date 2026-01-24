@@ -1,0 +1,19 @@
+Script started on 2026-01-23 19:55:02-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="228" LINES="14"]
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+[?2004h]0;angel@Angelino: /mnt/c/Dev/Full-Stack-Open/part12-containers-applications/script-answers[01;32mangel@Angelino[00m:[01;34m/mnt/c/Dev/Full-Stack-Open/part12-containers-applications/script-answers[00m$ [7mdocker container run -it ubuntu bash[27m
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdocker container run -it ubuntu bash
+[A
+[?2004l[?2004h]0;root@793eff4de123: /root@793eff4de123:/# [7mmkdir -p /usr/src/app[27mmkdir -p /usr/src/app
+[?2004l[?2004h]0;root@793eff4de123: /root@793eff4de123:/# [7mtouch /usr/src/app/index.js[27mtouch /usr/src/app/index.js
+[?2004l[?2004h]0;root@793eff4de123: /root@793eff4de123:/# [K[7mexit[27m
+[Aroot@793eff4de123:/# exit
+[A
+[?2004lexit
+[?2004h]0;angel@Angelino: /mnt/c/Dev/Full-Stack-Open/part12-containers-applications/script-answers[01;32mangel@Angelino[00m:[01;34m/mnt/c/Dev/Full-Stack-Open/part12-containers-applications/script-answers[00m$ [7mexit[27m
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit
+[A
+[?2004lexit
+
+Script done on 2026-01-23 19:55:39-04:00 [COMMAND_EXIT_CODE="0"]
