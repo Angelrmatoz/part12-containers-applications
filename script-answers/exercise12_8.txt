@@ -1,0 +1,62 @@
+Script started on 2026-01-28 20:06:34-04:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="228" LINES="15"]
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+[?2004h]0;angel@Angelino: /mnt/c/Dev/Full-Stack-Open/part12-containers-applications/script-answers[01;32mangel@Angelino[00m:[01;34m/mnt/c/Dev/Full-Stack-Open/part12-containers-applications/script-answers[00m$ [7mdocker ps[27m
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdocker ps
+[A
+[?2004lCONTAINER ID   IMAGE            COMMAND                  CREATED        STATUS         PORTS                                             NAMES
+9edf6c7d943e   express-server   "docker-entrypoint.s…"   28 hours ago   Up 4 minutes   0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp       todo-backend-app-1
+37f6e7431958   mongo            "docker-entrypoint.s…"   28 hours ago   Up 4 minutes   0.0.0.0:27017->27017/tcp, [::]:27017->27017/tcp   todo-backend-mongo-1
+[?2004h]0;angel@Angelino: /mnt/c/Dev/Full-Stack-Open/part12-containers-applications/script-answers[01;32mangel@Angelino[00m:[01;34m/mnt/c/Dev/Full-Stack-Open/part12-containers-applications/script-answers[00m$ docker exec -it todo-bq[Kackend-mongo-1 mongosh
+[?2004l]0;mongosh mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	697aa53ac387b75e598ce5af
+Connecting to:		[1m[32mmongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.6.0[0m
+Using MongoDB:		8.2.3
+[1m[33mUsing Mongosh[0m:		2.6.0
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+[1G[0J [1G[?2004h[1m[33m------[0m
+   [1m[33mThe server generated these startup warnings when booting[0m
+   2026-01-29T00:04:31.910+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2026-01-29T00:04:32.812+00:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+   2026-01-29T00:04:32.812+00:00: For customers running the current memory allocator, we suggest changing the contents of the following sysfsFile
+   2026-01-29T00:04:32.812+00:00: For customers running the current memory allocator, we suggest changing the contents of the following sysfsFile
+   2026-01-29T00:04:32.812+00:00: We suggest setting the contents of sysfsFile to 0.
+   2026-01-29T00:04:32.812+00:00: We suggest setting swappiness to 0 or 1, as swapping can cause performance problems.
+[1m[33m------[0m
+
+[1G[0Jtest> [7Guse todos
+switched to db todos
+[1G[0Jtodos> [8Gshow collections
+
+[1G[0Jtodos> [8Gdb.todos.insertOne({ text[33mtext[39m: [32m"[39m[32mI[39m[32mn[39m[32mc[39m[32mr[39m[32me[39m[32ma[39m[32ms[39m[32me[39m [32mt[39m[32mh[39m[32me[39m [32mn[39m[32mu[39m[32mm[39m[32mb[39m[32me[39m[32mr[39m [32mo[39m[32mf[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m[32ms[39m [32mi[39m[32mn[39m [32mm[39m[32my[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m [32mb[39m[32me[39m[32ml[39m[32mt[39m[32m"[39m, d[36mdo[39mdone: fals[33mfalse[39m })
+[1G[0J... [5G
+{
+  acknowledged: [33mtrue[39m,
+  insertedId: ObjectId([32m'697aa57dc387b75e598ce5b0'[39m)
+}
+[1G[0Jtodos> [8Gshow collections
+[1G[0J... [5G
+[1mtodos[0m
+[1G[0Jtodos> [8Gshow collections
+[1G[0J... [5G
+[1mtodos[0m
+[1G[0Jtodos> [8Gdb.todos.find({})
+[1G[0J... [5G
+[
+  {
+    _id: ObjectId([32m'697aa57dc387b75e598ce5b0'[39m),
+    text: [32m'Increase the number of tools in my tool belt'[39m,
+    done: [33mfalse[39m
+  }
+]
+[1G[0Jtodos> [8Gexit
+[?2004l]0;[?2004h]0;angel@Angelino: /mnt/c/Dev/Full-Stack-Open/part12-containers-applications/script-answers[01;32mangel@Angelino[00m:[01;34m/mnt/c/Dev/Full-Stack-Open/part12-containers-applications/script-answers[00m$ exit
+[?2004lexit
+
+Script done on 2026-01-28 20:11:57-04:00 [COMMAND_EXIT_CODE="0"]

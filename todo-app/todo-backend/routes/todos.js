@@ -1,5 +1,6 @@
 const express = require('express');
 const { Todo } = require('../mongo')
+const redis = require('../redis')
 const router = express.Router();
 
 /* GET todos listing. */
@@ -14,6 +15,9 @@ router.post('/', async (req, res) => {
     text: req.body.text,
     done: false
   })
+  // Incrementar el contador de tareas en Redis
+  const current = await redis.getAsync('added_todos') || 0;
+  await redis.setAsync('added_todos', Number(current) + 1);
   res.send(todo);
 });
 
