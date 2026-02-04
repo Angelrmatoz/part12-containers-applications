@@ -4,11 +4,14 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        - VITE_BACKEND_URL=http://localhost:3000
+        - VITE_BACKEND_URL=/api
     ports:
       - "8080:80"
+
+    container_name: frontend-dev
+
     environment:
-      - VITE_BACKEND_URL=http://localhost:3000
+      - VITE_BACKEND_URL=/api
     restart: unless-stopped
     volumes:
       - ./src:/usr/src/app/src

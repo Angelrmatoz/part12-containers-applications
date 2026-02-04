@@ -1,0 +1,53 @@
+services:
+  todo-frontend:
+    image: todo-frontend
+    container_name: todo-frontend
+    volumes:
+      - ./todo-frontend:/usr/src/app
+    environment:
+      - VITE_BACKEND_URL=/api
+
+  todo-backend:
+    image: express-server
+    container_name: todo-backend
+    volumes:
+      - ./todo-backend:/usr/src/app
+      - /usr/src/app/node_modules
+    command: sh -c "npm install && npm start"
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/the_database
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - mongo
+      - redis
+
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx-proxy
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.dev.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - todo-frontend
+      - todo-backend
+
+volumes:
+  redis-data:
+  mongo-data:
