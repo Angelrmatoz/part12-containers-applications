@@ -15,7 +15,7 @@ services:
       - /usr/src/app/node_modules
     command: sh -c "npm install && npm start"
     environment:
-      - MONGO_URL=mongodb://mongo:27017/the_database
+      - MONGO_URL=mongodb://mongo:27017/todos
       - REDIS_URL=redis://redis:6379
     depends_on:
       - mongo
@@ -27,7 +27,7 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - mongo-data:/data/db
+      - mongo_data:/data/db
 
   redis:
     image: redis:latest
@@ -35,7 +35,7 @@ services:
     ports:
       - "6379:6379"
     volumes:
-      - redis-data:/data
+      - redis_data:/data
 
   nginx:
     image: nginx:alpine
@@ -49,5 +49,6 @@ services:
       - todo-backend
 
 volumes:
-  redis-data:
-  mongo-data:
+  redis_data:
+  mongo_data:
+
