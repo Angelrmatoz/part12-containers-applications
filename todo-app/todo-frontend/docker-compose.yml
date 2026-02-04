@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - VITE_BACKEND_URL=http://localhost:3000
+    ports:
+      - "8081:80"
+    container_name: frontend-prod
+    environment:
+      - VITE_BACKEND_URL=http://localhost:3000
+    restart: unless-stopped
+# No volumes ni hot reload en producción
