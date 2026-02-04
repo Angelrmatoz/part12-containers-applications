@@ -1,50 +1,41 @@
 # Full Stack Open - Parte 12: Containers y Aplicaciones
 
-Este proyecto contiene ejercicios prácticos de la Parte 12 del curso Full Stack Open, enfocados en el uso de contenedores Docker, administración de aplicaciones en contenedores, y automatización de tareas en entornos Linux.
+Este repositorio contiene los ejercicios y la aplicación práctica de la Parte 12 del curso Full Stack Open. El objetivo principal es aprender sobre la contenedorización de aplicaciones utilizando Docker y Docker Compose, así como la gestión de entornos de desarrollo y producción.
 
-## Estructura del proyecto
+## El Proyecto: Todo App
 
-- **script-answers/**: Carpeta donde se registran los comandos y pasos realizados en los ejercicios usando el comando `script` de Linux. Incluye archivos como `exercise12_1.txt`, `exercise12_2.txt`, `exercise12_3.txt`, y `exercise12_4.txt`.
-- **todo-app/**: Aplicación de ejemplo para practicar el uso de contenedores. Incluye:
-  - **old-todo-frontend/**: Versión antigua del frontend de la app de tareas.
-  - **todo-backend/**: Backend de la app, con integración a MongoDB y Redis.
-  - **todo-frontend/**: Versión moderna del frontend usando Vite y React.
+El núcleo de esta parte es una aplicación de gestión de tareas (Todo App) que consta de:
+- **Frontend**: Una aplicación React moderna construida con Vite.
+- **Backend**: Una API Express que utiliza MongoDB para el almacenamiento persistente y Redis para el conteo de accesos.
+- **Nginx**: Utilizado como proxy inverso para servir el frontend y redirigir las peticiones a la API.
+
+## Estructura del repositorio
+
+- **todo-app/**: Contiene el código fuente completo de la aplicación, configuraciones de Docker y Nginx.
+  - `todo-frontend/`: Aplicación React.
+  - `todo-backend/`: Servidor Express.
+  - `nginx.conf`: Configuración del proxy inverso.
+- **script-answers/**: Registros de sesiones de terminal (`script`) realizados durante los ejercicios teóricos (Ubuntu 101, 102, etc.).
+
+## Cómo empezar
+
+Para ejecutar la aplicación completa utilizando Docker:
+
+1. Navega a la carpeta `todo-app/`.
+2. Ejecuta el comando:
+   ```bash
+   docker compose up
+   ```
+   *Nota: Usa `docker-compose.dev.yml` para el entorno de desarrollo con hot-reloading.*
+
+Para más detalles sobre cada componente, consulta los archivos README en sus respectivas carpetas.
 
 ## Ejercicios realizados
 
-### Ejercicio 12.1 y 12.2
-- Práctica básica de comandos en Ubuntu y Docker.
-- Registro de comandos y salidas en `script-answers/exercise12_1.txt` y `script-answers/exercise12_2.txt`.
-
-### Ejercicio 12.3: Ubuntu 101
-- Uso de contenedores Ubuntu para editar archivos con Nano.
-- Registro de la sesión con el comando `script`.
-- Edición del archivo `/usr/src/app/index.js` para agregar `console.log('Hello World')`.
-
-### Ejercicio 12.4: Ubuntu 102
-- Instalación de Node.js dentro de un contenedor Ubuntu.
-- Ejecución del archivo `/usr/src/app/index.js` usando Node.js.
-- Registro completo de la sesión en `script-answers/exercise12_4.txt`.
-
-## Tecnologías utilizadas
-- **Docker**: Para crear y administrar contenedores Linux y Node.js.
-- **Node.js**: Para ejecutar scripts JavaScript dentro de los contenedores.
-- **Nano**: Editor de texto en terminal para editar archivos dentro de los contenedores.
-- **MongoDB y Redis**: Bases de datos utilizadas en el backend de la app de tareas.
-- **React y Vite**: Para el desarrollo del frontend moderno.
-
-## Cómo ejecutar los ejercicios
-
-1. Clona el repositorio y navega a la carpeta del proyecto.
-2. Sigue las instrucciones de cada ejercicio en los archivos de la carpeta `script-answers`.
-3. Utiliza Docker para crear y acceder a los contenedores según las instrucciones.
-4. Revisa los archivos `.txt` para ver el registro de comandos y salidas.
-
-## Notas adicionales
-- Los archivos de la carpeta `script-answers` se generan automáticamente al usar el comando `script` dentro de los contenedores.
-- Asegúrate de tener Docker y Node.js instalados en tu sistema para poder ejecutar y probar los ejercicios.
-- El proyecto está organizado para facilitar la práctica y el aprendizaje de herramientas modernas de desarrollo y automatización.
+A lo largo de esta parte se han completado diversos ejercicios que cubren:
+- Comandos básicos de Linux y Docker.
+- Instalación de dependencias en contenedores.
+- Orquestación de múltiples servicios (App, DB, Redis, Nginx).
 
 ---
-
 **Autor:** Ejercicios basados en el curso [Full Stack Open](https://fullstackopen.com/)

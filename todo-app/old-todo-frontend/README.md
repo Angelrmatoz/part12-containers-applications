@@ -1,15 +1,25 @@
-# React application
+# Todo App Frontend (Versión Antigua)
 
-This application is created from create-react-app.
+Esta es una versión anterior del frontend de la aplicación Todo App, construida con `create-react-app`. Se mantiene en el repositorio por motivos de referencia.
 
-Install dependencies with `npm install`
+## Cómo ejecutar (Sin Docker)
 
-You can run the application in development mode with `npm start`
+1. Instala las dependencias:
+   ```bash
+   npm install
+   ```
 
-You can build static files for production release with `npm run build`
+2. Ejecuta el servidor de desarrollo:
+   ```bash
+   REACT_APP_BACKEND_URL=http://localhost:3000 npm start
+   ```
 
-You can run tests with `npm run test`
+3. Para construir la versión de producción:
+   ```bash
+   npm run build
+   ```
 
-## Environment variables
-
-Use REACT_APP_BACKEND_URL to set where the backend for this application is.
+4. Para ejecutar las pruebas:
+   ```bash
+   npm run test
+   ```
